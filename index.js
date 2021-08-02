@@ -5,7 +5,7 @@ const cors = require('cors');
 
 require('dotenv').config({ path: 'variables.env' });
 
-
+app.use(cors());
 
 app.use(express.json());
 app.use('/api/destinatarios',require('./routes/destinatario'));
@@ -14,8 +14,9 @@ app.use('/api/historial',require('./routes/historial'));
 
 try{
 
+    
         const PORT = process.env.PORT || 4000;
-        app.use(cors());
+        
 
        mongoose.connect(process.env.DB_MONGO, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
                     .then(() => app.listen(PORT, () => console.log(`Servidor corriendo en el puerto: ${PORT}`)))
