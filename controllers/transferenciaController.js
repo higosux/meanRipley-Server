@@ -1,4 +1,4 @@
-const Transferencia = require("../models/Transferencia");
+const Transferencia = require("../models/transferencia");
 
 
 exports.transferir = async (req,res) => {

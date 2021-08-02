@@ -1,4 +1,4 @@
-const Destinatario = require("../models/Destinatario");
+const Destinatario = require("../models/destinatario");
 
 
 exports.crearDestinatario = async (req,res) => {
