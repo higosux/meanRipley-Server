@@ -1,5 +1,5 @@
 const Transferencia = require("../models/transferencia");
-const Destinatario = require("../models/Destinatario");
+const Destinatario = require("../models/destinatario");
 
 
 
