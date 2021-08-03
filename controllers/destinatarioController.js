@@ -1,4 +1,5 @@
 const Destinatario = require("../models/destinatario");
+const Transferencia = require("../models/transferencia");
 
 
 exports.crearDestinatario = async (req,res) => {
@@ -44,7 +45,9 @@ exports.eliminarDestinatario = async (req, res) => {
         }
 
         await Destinatario.findOneAndRemove({ _id: req.params.id });
-        
+        await Transferencia.findOneAndRemove({ destinatario: req.params.id });
+
+
         res.json({msg: 'Destinatario eliminado con éxito'});
         
 
